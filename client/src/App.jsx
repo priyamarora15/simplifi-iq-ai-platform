@@ -58,7 +58,7 @@ function App() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/analyze-company",
+        "https://simplifi-iq-ai-platform.onrender.com/",
         {
           method: "POST",
           headers: {
@@ -73,7 +73,7 @@ function App() {
       console.log(data);
 
       setAuditResult(data);
-      
+
       setTimeout(() => {
         window.scrollTo({
           top: document.body.scrollHeight,
