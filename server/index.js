@@ -43,11 +43,11 @@ app.post("/analyze-company", async (req, res) => {
         aiInsights,
     });
   } catch (error) {
-    console.log(error);
+    console.log("FULL ERROR:", error);
 
     res.status(500).json({
       success: false,
-      message: "Server error",
+      message: error.message,
     });
   }
 });
