@@ -59,7 +59,7 @@ function App() {
       setLoading(true);
 
       const response = await fetch(
-        "https://simplifi-iq-ai-platform.onrender.com/",
+        "https://simplifi-iq-ai-platform.onrender.com/analyze-company",
         {
           method: "POST",
           headers: {
