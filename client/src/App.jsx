@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
-  signInWithPopup,
-  onAuthStateChanged,
-  signOut,
+signInWithRedirect,
+onAuthStateChanged,
+signOut
 } from "firebase/auth";
 import { auth, provider } from "./firebase/config";
 
@@ -37,7 +37,8 @@ function App() {
   const handleGoogleLogin = async () => {
     try {
 
-      const result = await signInWithPopup(auth, provider);
+      await signInWithRedirect(auth, provider);
+      return;
 
       setUser(result.user);
 
