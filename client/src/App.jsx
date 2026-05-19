@@ -58,16 +58,18 @@ function App() {
 
       setLoading(true);
 
-      const response = await fetch(
-        "https://simplifi-iq-ai-platform.onrender.com/analyze-company",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await 
+      fetch("https://simplifi-iq-ai-platform.onrender.com/analyze-company", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          companyName,
+          website,
+          email
+        })
+      })
 
       const data = await response.json();
 
